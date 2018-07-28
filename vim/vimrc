@@ -1,0 +1,6 @@
+source $HOME/.dotfiles/vim/basic.vim
+"source $HOME/.dotfiles/vim/vundle.vim
+"source $HOME/.dotfiles/vim/neobundle.vim
+source $HOME/.dotfiles/vim/dein.vim
+source $HOME/.dotfiles/vim/neocomplete.vim
+
