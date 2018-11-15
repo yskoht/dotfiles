@@ -34,3 +34,6 @@ source_ ${DOT_BASH}/rbenv.sh
 # nodebrew
 source_ ${DOT_BASH}/node.sh
 
+# fzf
+source_ ${DOT_BASH}/fzf.sh
+
