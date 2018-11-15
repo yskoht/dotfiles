@@ -3,7 +3,7 @@
 # history
 export HISTSIZE=10000
 export HISTFILESIZE=10000
-export HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreboth:erasedups
 
 function share_history {
     history -a
