@@ -326,3 +326,6 @@ p7zip:
 inkscape:
 	brew install caskformula/caskformula/inkscape
 
+gtk:
+	brew install gtk+
+
