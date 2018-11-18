@@ -129,12 +129,8 @@ fzf-install:
 	brew install fzf
 fzf-setup:
 	$(call echo_setup_title,$@)
-	$$(which fish) -c 'fisher fzf'
-	$(call echo_message,'Rewrite bind \\\\cf -> \\\\ct in ~/.config/fish/functions/fish_user_key_bindings.fish')
-fzf-setup-bash:
-	$(call echo_setup_title,$@)
-	$$(brew --prefix)/opt/fzf/install
-fzf-conf-bash:
+	#$$(brew --prefix)/opt/fzf/install
+fzf-conf:
 	$(call echo_conf_title,$@)
 
 # git
