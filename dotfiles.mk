@@ -95,31 +95,31 @@ emacs-conf:
 	echo "(load-file \"$(DOT_EMACS_CONF)\")" >>$(EMACS_CONF)
 
 # fish
-.PHONY: fish fish-install fish-conf fish-addsh fish-chsh
-fish: fish-install fish-conf
-fish-install:
-	$(call echo_install_title,$@)
-	brew install fish
-fish-addsh:
-	$(call echo_sudo_title,$@)
-	echo "$$(which fish)" >> /etc/shells
-fish-chsh:
-	$(call echo_sudo_title,$@)
-	chsh -s "$$(which fish)"
-fish-conf:
-	$(call echo_conf_title,$@)
-	echo "source $(DOT_FISH_CONF)" >>$(FISH_CONF) 
-
-fisherman-install:
-	$(call echo_install_title,$@)
-	curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
-fisherman-setup:
-	$(call echo_setup_title,$@)
-	$$(which fish) -c 'fisher oh-my-fish/plugin-balias'
-	$$(which fish) -c 'fisher z'
-	$$(which fish) -c 'fisher edc/bass'
-	$$(which fish) -c 'fisher omf/theme-agnoster'
-	#$$(which fish) -c 'fisher simnalamburt/shellder'
+#.PHONY: fish fish-install fish-conf fish-addsh fish-chsh
+#fish: fish-install fish-conf
+#fish-install:
+#	$(call echo_install_title,$@)
+#	brew install fish
+#fish-addsh:
+#	$(call echo_sudo_title,$@)
+#	echo "$$(which fish)" >> /etc/shells
+#fish-chsh:
+#	$(call echo_sudo_title,$@)
+#	chsh -s "$$(which fish)"
+#fish-conf:
+#	$(call echo_conf_title,$@)
+#	echo "source $(DOT_FISH_CONF)" >>$(FISH_CONF)
+#
+#fisherman-install:
+#	$(call echo_install_title,$@)
+#	curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+#fisherman-setup:
+#	$(call echo_setup_title,$@)
+#	$$(which fish) -c 'fisher oh-my-fish/plugin-balias'
+#	$$(which fish) -c 'fisher z'
+#	$$(which fish) -c 'fisher edc/bass'
+#	$$(which fish) -c 'fisher omf/theme-agnoster'
+#	#$$(which fish) -c 'fisher simnalamburt/shellder'
 
 # fzf
 .PHONY: fzf fzf-install fzf-setup
