@@ -228,34 +228,17 @@ tmux-conf:
 	echo "source-file $(DOT_TMUX_CONF)" >>$(TMUX_CONF)
 
 # vim
-.PHONY: vim vim-install vim-install-bundle vim-install-vundle vim-install-dein vim-install-neobundle vim-install-ctags vim-conf
-vim: vim-install vim-install-bundle vim-install-ctags vim-conf
+.PHONY: vim vim-install vim-install-ctags vim-install-plug vim-conf
+vim: vim-install vim-install-ctags vim-install-plug vim-conf
 vim-install:
 	$(call echo_install_title,$@)
 	brew install vim --with-luajit
-vim-install-bundle: vim-install-dein #vim-install-neobundle vim-install-vundle
-vim-install-vundle:
-	$(call echo_install_title,$@)
-	mkdir -p $(DOT_VIM_BUNDLE)
-	git clone https://github.com/VundleVim/Vundle.vim.git $(DOT_VIM_BUNDLE)/Vundle.vim
-	vim +PluginInstall +qall
-vim-install-neobundle:
-	$(call echo_install_title,$@)
-	mkdir -p $(DOT_VIM_BUNDLE)/Neobundle.vim
-	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > $(DOT_VIM_BUNDLE)/Neobundle.vim/install.sh
-	(cd $(DOT_VIM_BUNDLE)/Neobundle.vim && sh ./install.sh)
-vim-install-dein:
-	$(call echo_install_title,$@)
-	mkdir -p $(DOT_VIM_BUNDLE)/Dein.vim
-	curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > $(DOT_VIM_BUNDLE)/Dein.vim/install.sh
-	(cd $(DOT_VIM_BUNDLE)/Dein.vim && sh ./install.sh ~/.cache/dein)
 vim-install-ctags:
 	$(call echo_install_title,$@)
 	brew install ctags
-vim-install-neocomplete:
+vim-install-plug:
 	$(call echo_install_title,$@)
-	brew install ctags
-
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim-conf:
 	$(call echo_conf_title,$@)
 	echo "source $(DOT_VIM_CONF)" >>$(VIM_CONF)
@@ -317,7 +300,7 @@ heroku:
 postgresql:
 	brew install postgresql
 
-newvim:
+neovim:
 	brew install neovim
 
 p7zip:

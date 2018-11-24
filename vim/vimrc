@@ -1,6 +1,6 @@
 source $HOME/.dotfiles/vim/basic.vim
-"source $HOME/.dotfiles/vim/vundle.vim
-"source $HOME/.dotfiles/vim/neobundle.vim
-source $HOME/.dotfiles/vim/dein.vim
-source $HOME/.dotfiles/vim/neocomplete.vim
+source $HOME/.dotfiles/vim/plug.vim
+
+source $HOME/.dotfiles/vim/molokai.vim
+source $HOME/.dotfiles/vim/nerdtree.vim
 
