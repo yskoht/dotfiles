@@ -152,7 +152,7 @@ git-conf:
 item-theme-install:
 	$(call echo_install_title,$@)
 	git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git
-	# Brogrammer
+	# ->Brogrammer
 	# Japanesque
 	# Thayer Bright
 
