@@ -14,7 +14,6 @@ source_ ${DOT_BASH}/path.sh
 
 # alias
 source_ ${DOT_BASH}/alias.sh
-source_ ${DOT_BASH}/alias_custom.sh
 
 # imagemagick
 source_ ${DOT_BASH}/imagemagick.sh
