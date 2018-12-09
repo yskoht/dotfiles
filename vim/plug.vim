@@ -11,6 +11,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 't9md/vim-quickhl'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
+Plug 'simeji/winresizer'
 
 " Initialize plugin system
 call plug#end()
