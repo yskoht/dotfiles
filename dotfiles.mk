@@ -67,7 +67,6 @@ bash-install:
 bash-conf:
 	$(call echo_conf_title,$@)
 	echo "source $(DOT_BASH_CONF)"      >>$(BASH_CONF)
-	echo "source $(DOT_BASH)/prompt.sh" >>$(BASH_CONF)  # tmp
 bash-addsh:
 	$(call echo_sudo_title,$@)
 	echo "$$(which bash" >> /etc/shells
