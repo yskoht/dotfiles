@@ -1,5 +1,7 @@
 map <C-n> :NERDTreeToggle<CR>
 
+let g:NERDTreeWinPos = "right"
+
 "autocmd VimEnter * execute 'NERDTree'
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
