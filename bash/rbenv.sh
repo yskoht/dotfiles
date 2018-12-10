@@ -1,2 +1,2 @@
 export PATH="${HOME}/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+[ "`which rbenv`" != "" ] && eval "$(rbenv init -)"
