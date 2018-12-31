@@ -4,16 +4,28 @@
         ui = auto
 
 [alias]
-        br = branch
+        a = add
+        ap = add -patch
+        au = add --update
+        br = branch -vv
         co = checkout
-        ci = commit
+        ci = commit -v
+        cp = cherry-pick
         d = diff
         dc = diff --cached
         f = fetch --prune
-        hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+        fa = fetch --all --prune
+        l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+        m = merge
+        ma = merge --abort
+        ra = rebase --abort
+        rh = reset --hard
         ri = rebase -i
+        rv = remote -v
         p = pull
         st = status
+        s = stash
+        su = submodule update
 
 [core]
         editor = vim
