@@ -5,4 +5,8 @@ source $HOME/.dotfiles/vim/molokai.vim
 source $HOME/.dotfiles/vim/nerdtree.vim
 source $HOME/.dotfiles/vim/indent-guides.vim
 source $HOME/.dotfiles/vim/quickhl.vim
+source $HOME/.dotfiles/vim/neocomplete.vim
+source $HOME/.dotfiles/vim/ale.vim
+source $HOME/.dotfiles/vim/unite.vim
+source $HOME/.dotfiles/vim/ctags.vim
 

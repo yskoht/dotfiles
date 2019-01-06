@@ -12,6 +12,16 @@ Plug 't9md/vim-quickhl'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'simeji/winresizer'
+Plug 'Shougo/neocomplete.vim'
+Plug 'w0rp/ale'
+Plug 'tpope/vim-endwise'
+Plug 'Shougo/unite.vim'
+Plug 'basyura/unite-rails'
+Plug 'thinca/vim-ref'
+Plug 'taka84u9/vim-ref-ri'
+Plug 'AndrewRadev/switch.vim'
+Plug 'tpope/vim-rails'
+
 
 " Initialize plugin system
 call plug#end()

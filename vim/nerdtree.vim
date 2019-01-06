@@ -1,4 +1,4 @@
-map <C-n> :NERDTreeToggle<CR>
+map <C-m> :NERDTreeToggle<CR>
 
 let g:NERDTreeWinPos = "right"
 
