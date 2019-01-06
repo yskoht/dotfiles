@@ -311,3 +311,9 @@ inkscape:
 gtk:
 	brew install gtk+
 
+mysql:
+	brew install mysql
+
+postgresql:
+	brew install postgresql
+
