@@ -36,3 +36,6 @@ source_ ${DOT_BASH}/node.sh
 # fzf
 source_ ${DOT_BASH}/fzf.sh
 
+# postgresql
+source_ ${DOT_BASH}/postgresql.sh
+
