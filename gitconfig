@@ -7,7 +7,7 @@
         a = add
         ap = add -patch
         au = add --update
-        br = branch -vv
+        br = branch
         co = checkout
         ci = commit -v
         cp = cherry-pick
