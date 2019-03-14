@@ -32,4 +32,4 @@ alias yr='yarn run'
 alias r='rails'
 alias b='bundle'
 alias be='bundle exec'
-
+alias t='tmux'
