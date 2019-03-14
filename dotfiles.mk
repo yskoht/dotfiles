@@ -317,3 +317,5 @@ mysql:
 postgresql:
 	brew install postgresql
 
+openssl:
+	brew install openssl
