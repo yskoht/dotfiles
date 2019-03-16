@@ -9,6 +9,9 @@ function source_() {
     fi
 }
 
+# misc
+source_ ${DOT_BASH}/misc.sh
+
 # path
 source_ ${DOT_BASH}/path.sh
 
