@@ -25,7 +25,7 @@
         p = pull
         st = status
         s = stash
-        su = submodule update
+        su = submodule foreach git pull origin master
 
 [core]
         editor = vim
