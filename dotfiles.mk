@@ -319,3 +319,10 @@ postgresql:
 
 openssl:
 	brew install openssl
+
+go:
+	brew install go
+
+ctags:
+	brew install universal-ctags
+
