@@ -11,4 +11,4 @@ fi
 # Key bindings
 # ------------
 source "${DOT_BASH}/fzf/key-bindings.bash"
-
+source "${DOT_BASH}/fzf/my-key-bindings.bash"
