@@ -2,7 +2,7 @@ source $HOME/.dotfiles/vim/basic.vim
 source $HOME/.dotfiles/vim/plug.vim
 
 source $HOME/.dotfiles/vim/molokai.vim
-source $HOME/.dotfiles/vim/nerdtree.vim
+" source $HOME/.dotfiles/vim/nerdtree.vim
 source $HOME/.dotfiles/vim/indent-guides.vim
 source $HOME/.dotfiles/vim/quickhl.vim
 source $HOME/.dotfiles/vim/neocomplete.vim
