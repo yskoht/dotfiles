@@ -238,6 +238,10 @@ vim-install-ctags:
 vim-install-plug:
 	$(call echo_install_title,$@)
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	echo '*****'
+	echo '*****'
+	echo '*****'
+	echo 'type `:PlugInstall` in vim console after vim-install-plug'
 vim-conf:
 	$(call echo_conf_title,$@)
 	echo "source $(DOT_VIM_CONF)" >>$(VIM_CONF)
@@ -313,9 +317,6 @@ gtk:
 
 mysql:
 	brew install mysql
-
-postgresql:
-	brew install postgresql
 
 openssl:
 	brew install openssl
