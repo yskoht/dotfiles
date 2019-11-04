@@ -6,14 +6,14 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 Plug 'tomasr/molokai'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 't9md/vim-quickhl'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'simeji/winresizer'
-Plug 'Shougo/neocomplete.vim'
-Plug 'w0rp/ale'
+" Plug 'Shougo/neocomplete.vim'
+" Plug 'w0rp/ale'
 Plug 'tpope/vim-endwise'
 Plug 'Shougo/unite.vim'
 Plug 'basyura/unite-rails'
