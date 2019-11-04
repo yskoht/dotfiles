@@ -5,7 +5,7 @@
         ui = auto
 
 [alias]
-        #ci = commit -v
+        ci = commit -v
         cm = commit -m
         ca = commit -v --amend
         cpa = cherry-pick --abort
@@ -34,13 +34,13 @@
         # diff --cached 
         dc = "!f() { git diff --name-only --cached  | uniq | fzf --preview \"echo {} | xargs git diff --cached --color=always\" >/dev/null; }; f"
         # add 
-        a  = "!f() { git status --short | grep -E '^\\sM|^MM|^\\?|^UU|^AM' | fzf -m --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4- | xargs git add; git status; }; f"
+        a  = "!f() { git status --short | grep -E '^\\sM|^MM|^\\?|^UU|^AM|^\\sD' | fzf -m --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4- | xargs git add; git status; }; f"
         # add --patch
-        ap = "!f() { git status --short | grep -E '^\\sM|^MM|^\\?|^UU|^AM' | fzf -m --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4- | xargs git add -p; git status; }; f"
+        ap = "!f() { target=$(git status --short | grep -E '^\\sM|^MM|^\\?|^UU|^AM|^\\sD' | fzf --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4-); git add -p ${target}; git status; }; f"
         # unstage
         us = "!f() { git diff --name-only --cached | fzf -m --preview \"echo {} | xargs git diff --cached --color=always\" | xargs git reset HEAD; git status; }; f"
         # restore
-        cr  = "!f() { git status --short | grep -E '^\\sM|^MM' | fzf -m --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4- | xargs git restore; git status; }; f"
+        cr  = "!f() { git status --short | grep -E '^\\sM|^MM|^\\sD' | fzf -m --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4- | xargs git restore; git status; }; f"
         # branch list
         b = "!f() { git branch | fzf --preview \"echo {} | cut -c 3- | xargs git log --color=always\" | cut -c 3- | xargs echo; }; f"
         # branch list (multi)
@@ -61,6 +61,7 @@
         uri = "!f() { target=$(git u) && git rebase -i ${target} && stty sane; }; f"
         # log
         l  = "!f() { git log --pretty=format:'%h - %s(%cr)' --abbrev-commit --date=relative | fzf --preview \"echo {} | cut -c -7 | xargs git show --color=always\"; }; f"
+        ln = "!f() { git log --pretty=format:'%h - %s(%cr)' --abbrev-commit --date=relative | fzf --preview \"echo {} | cut -c -7 | xargs git show --name-only --color=always\"; }; f"
         # log -p
         # log -S
         # grep
