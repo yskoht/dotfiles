@@ -21,6 +21,7 @@ Plug 'thinca/vim-ref'
 Plug 'taka84u9/vim-ref-ri'
 Plug 'AndrewRadev/switch.vim'
 Plug 'tpope/vim-rails'
+Plug 'leafgarland/typescript-vim'
 
 
 " Initialize plugin system

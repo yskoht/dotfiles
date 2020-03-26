@@ -26,16 +26,18 @@ set shiftwidth=2        " 行頭でのTab幅
 set ignorecase          " 検索で大文字小文字を区別しない
 nmap <Esc><Esc> :nohlsearch<CR><Esc> " ESCESCでハイライト解除
 
+set formatoptions-=cro
+
 " Ctrl + hjkl でウィンドウ間を移動
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " Shift + 矢印でウィンドウサイズを変更
-nnoremap <S-Left>  <C-w><<CR>
-nnoremap <S-Right> <C-w>><CR>
-nnoremap <S-Up>    <C-w>+<CR>
-nnoremap <S-Down>  <C-w>-<CR>
+nnoremap ( <C-w><
+nnoremap ) <C-w>>
+nnoremap + <C-w>+
+nnoremap - <C-w>-
 " TAB切り替え
 nmap <Tab>   gt
 nmap <S-Tab> gT
