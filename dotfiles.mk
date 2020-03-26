@@ -327,3 +327,6 @@ go:
 ctags:
 	brew install universal-ctags
 
+ansible:
+	brew install ansible
+
