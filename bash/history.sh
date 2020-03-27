@@ -1,8 +1,8 @@
 # -*- coding: utf-8-unix -*-
 
 # history
-export HISTSIZE=10000
-export HISTFILESIZE=10000
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
 export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE=""
 

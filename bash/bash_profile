@@ -30,11 +30,11 @@ source_ ${DOT_BASH}/history.sh
 # pyenv
 source_ ${DOT_BASH}/pyenv.sh
 
-# rbenv
-source_ ${DOT_BASH}/rbenv.sh
+# rvm
+source_ ${DOT_BASH}/rvm.sh
 
-# nodebrew
-source_ ${DOT_BASH}/node.sh
+# nodenv
+source_ ${DOT_BASH}/nodenv.sh
 
 # fzf
 source_ ${DOT_BASH}/fzf.sh
