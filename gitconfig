@@ -25,20 +25,21 @@
         bm = branch -m
         au = add -u
         rst = reset --soft HEAD^
+        hr = cm '---' --allow-empty
 
         # push
         ps = "!f() { git push -u origin $(git branch --show-current); }; f"
 
         # diff
-        d  = "!f() { git diff --name-only | uniq | fzf --preview \"echo {} | xargs git diff --color=always\" >/dev/null; }; f"
+        d  = "!f() { git diff --name-only | uniq | fzf --preview \"git diff --color=always {}\" >/dev/null; }; f"
         # diff --cached 
-        dc = "!f() { git diff --name-only --cached  | uniq | fzf --preview \"echo {} | xargs git diff --cached --color=always\" >/dev/null; }; f"
+        dc = "!f() { git diff --name-only --cached  | uniq | fzf --preview \"git diff --cached --color=always {}\" >/dev/null; }; f"
         # add 
         a  = "!f() { git status --short | grep -E '^\\sM|^MM|^\\?|^UU|^AM|^\\sD' | fzf -m --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4- | xargs git add; git status; }; f"
         # add --patch
         ap = "!f() { target=$(git status --short | grep -E '^\\sM|^MM|^\\?|^UU|^AM|^\\sD' | fzf --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4-); git add -p ${target}; git status; }; f"
         # unstage
-        us = "!f() { git diff --name-only --cached | fzf -m --preview \"echo {} | xargs git diff --cached --color=always\" | xargs git reset HEAD; git status; }; f"
+        us = "!f() { git diff --name-only --cached | fzf -m --preview \"git diff --cached --color=always {}\" | xargs git reset HEAD; git status; }; f"
         # restore
         cr  = "!f() { git status --short | grep -E '^\\sM|^MM|^\\sD' | fzf -m --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4- | xargs git restore; git status; }; f"
         # branch list
@@ -65,7 +66,6 @@
         # log -p
         # log -S
         # grep
-
 
 [core]
         editor = vim
