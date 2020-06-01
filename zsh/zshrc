@@ -1,0 +1,47 @@
+# -*- coding: utf-8-unix -*-
+
+DOT=${HOME}/.dotfiles
+DOT_ZSH=${DOT}/zsh
+
+function source_() {
+    if [ -f "$1" ]; then
+        source "$1"
+    fi
+}
+
+# misc
+source_ ${DOT_ZSH}/misc.sh
+
+# path
+source_ ${DOT_ZSH}/path.sh
+
+# alias
+source_ ${DOT_ZSH}/alias.sh
+
+# imagemagick
+source_ ${DOT_ZSH}/imagemagick.sh
+
+# prompt
+source_ ${DOT_ZSH}/prompt.sh
+
+# history
+source_ ${DOT_ZSH}/history.sh
+
+# pyenv
+# source_ ${DOT_ZSH}/pyenv.sh
+
+# rvm
+# source_ ${DOT_ZSH}/rvm.sh
+
+# nodenv
+# source_ ${DOT_ZSH}/nodenv.sh
+
+# fzf
+source_ ${DOT_ZSH}/fzf.sh
+
+# postgresql
+source_ ${DOT_ZSH}/postgresql.sh
+
+# zsh-completions
+source_ ${DOT_ZSH}/zsh-completions.sh
+
