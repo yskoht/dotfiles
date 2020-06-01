@@ -4,5 +4,5 @@
 ## Install
 
 ```sh
-git git@github.com:yskoht/dotfiles.git ~/.dotfiles
+git clone git@github.com:yskoht/dotfiles.git ~/.dotfiles
 ```
