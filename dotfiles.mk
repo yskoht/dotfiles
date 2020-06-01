@@ -2,19 +2,18 @@
 DOT := $(HOME)/.dotfiles
 
 BASH_CONF  := $(HOME)/.bash_profile
+ZSH_CONF  := $(HOME)/.zshrc
 GIT_CONF   := $(HOME)/.gitconfig
 TMUX_CONF  := $(HOME)/.tmux.conf
 VIM_CONF   := $(HOME)/.vimrc
 
 DOT_BASH       := $(DOT)/bash
-DOT_FONT       := $(DOT)/font
-DOT_POWERLINE  := $(DOT_FONT)/powerline
+DOT_ZSH       := $(DOT)/zsh
 DOT_VIM        := $(DOT)/vim
-DOT_VIM_BUNDLE := $(DOT_VIM)/bundle
 
 DOT_BASH_CONF        := $(DOT_BASH)/bash_profile
+DOT_ZSH_CONF         := $(DOT_ZSH)/zshrc
 DOT_GIT_CONF         := $(DOT)/gitconfig
-DOT_IMAGEMAGICK_CONF := $(DOT_BASH)/imagemagick.sh
 DOT_NODE_CONF        := $(DOT_BASH)/node.sh
 DOT_PYENV_CONF       := $(DOT_BASH)/pyenv.sh
 DOT_RBENV_CONF       := $(DOT_BASH)/rbenv.sh
@@ -52,38 +51,49 @@ brew-bundle-dump:
 	$(call echo_other_title,$@)
 	brew bundle dump
 
-# bash
-.PHONY: bash bash-conf bash-addsh bash-chsh
-bash: bash-conf
-bash-conf:
-	$(call echo_conf_title,$@)
-	echo "source $(DOT_BASH_CONF)" >>$(BASH_CONF)
-bash-addsh:
-	$(call echo_sudo_title,$@)
-	echo "$$(which bash" >> /etc/shells
-bash-chsh:
-	$(call echo_sudo_title,$@)
-	chsh -s "$$(which bash)"
-
-# git
-.PHONY: git git-setup git-setup-bash git-conf
-git: git-setup git-conf
-git-setup: git-setup-bash
-git-setup-bash:
-	$(call echo_setup_title,$@)
-	brew install bash-git-prompt bash-completion@2
-git-conf:
-	$(call echo_conf_title,$@)
-	echo "[include]\n\tpath = $(DOT_GIT_CONF)" >>$(GIT_CONF)
-
 # iTems2 theme
 .PHONY: iterm-theme-install
-item-theme-install:
+iterm-theme-install:
 	$(call echo_install_title,$@)
 	git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git
-	# ->Brogrammer
-	# Japanesque
-	# Thayer Bright
+
+# powerline
+.PHONY: powerline
+powerline:
+	$(call echo_install_title,$@)
+	git clone https://github.com/powerline/fonts.git --depth=1
+	(cd fonts && ./install.sh)
+	rm -rf fonts
+
+# bash
+# .PHONY: bash bash-conf bash-addsh bash-chsh
+# bash: bash-conf
+# bash-conf:
+# 	$(call echo_conf_title,$@)
+# 	echo "source $(DOT_BASH_CONF)" >>$(BASH_CONF)
+# bash-addsh:
+# 	$(call echo_sudo_title,$@)
+# 	echo "$$(which bash" >> /etc/shells
+# bash-chsh:
+# 	$(call echo_sudo_title,$@)
+# 	chsh -s "$$(which bash)"
+
+# zsh
+.PHONY: zsh
+zsh: zsh-conf
+zsh-conf:
+	$(call echo_conf_title,$@)
+	echo "source $(DOT_ZSH_CONF)" >>$(ZSH_CONF)
+zsh-git-prompt:
+	$(call echo_install_title,$@)
+	git clone https://github.com/olivierverdier/zsh-git-prompt.git $(DOT_ZSH)/zsh-git-prompt
+
+# git
+.PHONY: git git-conf
+git: git-conf
+git-conf:
+	$(call echo_install_title,$@)
+	echo "[include]\n\tpath = $(DOT_GIT_CONF)" >>$(GIT_CONF)
 
 # node
 .PHONY: node nodebrew-install nodebrew-conf yarn-install avn-install
@@ -140,10 +150,13 @@ ruby-v2.5.1-install:
 
 # tmux
 .PHONY: tmux tmux-conf
-tmux: tmux-conf
+tmux: tmux-conf tmux-color
 tmux-conf:
 	$(call echo_conf_title,$@)
 	echo "source-file $(DOT_TMUX_CONF)" >>$(TMUX_CONF)
+tmux-plugin-manager:
+	$(call echo_install_title,$@)
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # vim
 .PHONY: vim vim-install-plug vim-conf
