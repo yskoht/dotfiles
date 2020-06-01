@@ -52,19 +52,12 @@ brew-bundle-dump:
 	$(call echo_other_title,$@)
 	brew bundle dump
 
-# cask
-.PHONY: cask cask-install
-cask: cask-install
-cask-install:
-	$(call echo_install_title,$@)
-	brew install cask
-
 # bash
 .PHONY: bash bash-conf bash-addsh bash-chsh
 bash: bash-conf
 bash-conf:
 	$(call echo_conf_title,$@)
-	echo "source $(DOT_BASH_CONF)"      >>$(BASH_CONF)
+	echo "source $(DOT_BASH_CONF)" >>$(BASH_CONF)
 bash-addsh:
 	$(call echo_sudo_title,$@)
 	echo "$$(which bash" >> /etc/shells
