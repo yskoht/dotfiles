@@ -53,6 +53,15 @@ brew-install:
 brew-bundle: brew-install
 	brew bundle
 
+# mac
+.PHONY: mac-setup
+mac-setup:
+	$(call echo_setup_title,$@)
+	sh $(DOT_MAC)/setup_mac.sh
+mac-name:
+	$(call echo_setup_title,$@)
+	sh $(DOT_MAC)/computer_name.sh
+
 # iTems2 theme
 .PHONY: iterm-theme-install
 iterm-theme-install:
