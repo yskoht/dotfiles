@@ -7,10 +7,11 @@ GIT_CONF  := $(HOME)/.gitconfig
 TMUX_CONF := $(HOME)/.tmux.conf
 VIM_CONF  := $(HOME)/.vimrc
 
-DOT_BASH  := $(DOT)/bash
-DOT_ZSH   := $(DOT)/zsh
-DOT_VIM   := $(DOT)/vim
-DOT_MAC   := $(DOT)/mac
+DOT_BASH      := $(DOT)/bash
+DOT_ZSH       := $(DOT)/zsh
+DOT_VIM       := $(DOT)/vim
+DOT_MAC       := $(DOT)/mac
+DOT_KARABINER := $(DOT)/karabiner
 
 DOT_BASH_CONF  := $(DOT_BASH)/bash_profile
 DOT_ZSH_CONF   := $(DOT_ZSH)/zshrc
@@ -61,6 +62,12 @@ mac-setup:
 mac-name:
 	$(call echo_setup_title,$@)
 	sh $(DOT_MAC)/computer_name.sh
+
+# karabiner
+.PHONY: karabiner-conf
+karabiner-conf:
+	$(call echo_conf_title,$@)
+	ln -s $(DOT)/karabiner.json ~/.config/karabiner/karabiner.json
 
 # iTems2 theme
 .PHONY: iterm-theme-install
