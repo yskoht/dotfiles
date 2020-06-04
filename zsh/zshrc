@@ -27,6 +27,9 @@ source_ ${DOT_ZSH}/prompt.sh
 # history
 source_ ${DOT_ZSH}/history.sh
 
+# anyenv
+source_ ${DOT_ZSH}/anyenv.sh
+
 # pyenv
 # source_ ${DOT_ZSH}/pyenv.sh
 
