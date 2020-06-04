@@ -1,24 +1,25 @@
 #!/usr/bin/make -f
 DOT := $(HOME)/.dotfiles
 
-BASH_CONF  := $(HOME)/.bash_profile
+BASH_CONF := $(HOME)/.bash_profile
 ZSH_CONF  := $(HOME)/.zshrc
-GIT_CONF   := $(HOME)/.gitconfig
-TMUX_CONF  := $(HOME)/.tmux.conf
-VIM_CONF   := $(HOME)/.vimrc
+GIT_CONF  := $(HOME)/.gitconfig
+TMUX_CONF := $(HOME)/.tmux.conf
+VIM_CONF  := $(HOME)/.vimrc
 
-DOT_BASH       := $(DOT)/bash
-DOT_ZSH       := $(DOT)/zsh
-DOT_VIM        := $(DOT)/vim
+DOT_BASH  := $(DOT)/bash
+DOT_ZSH   := $(DOT)/zsh
+DOT_VIM   := $(DOT)/vim
+DOT_MAC   := $(DOT)/mac
 
-DOT_BASH_CONF        := $(DOT_BASH)/bash_profile
-DOT_ZSH_CONF         := $(DOT_ZSH)/zshrc
-DOT_GIT_CONF         := $(DOT)/gitconfig
-DOT_NODE_CONF        := $(DOT_BASH)/node.sh
-DOT_PYENV_CONF       := $(DOT_BASH)/pyenv.sh
-DOT_RBENV_CONF       := $(DOT_BASH)/rbenv.sh
-DOT_TMUX_CONF        := $(DOT)/tmux.conf
-DOT_VIM_CONF         := $(DOT_VIM)/vimrc
+DOT_BASH_CONF  := $(DOT_BASH)/bash_profile
+DOT_ZSH_CONF   := $(DOT_ZSH)/zshrc
+DOT_GIT_CONF   := $(DOT)/gitconfig
+DOT_NODE_CONF  := $(DOT_BASH)/node.sh
+DOT_PYENV_CONF := $(DOT_BASH)/pyenv.sh
+DOT_RBENV_CONF := $(DOT_BASH)/rbenv.sh
+DOT_TMUX_CONF  := $(DOT)/tmux.conf
+DOT_VIM_CONF   := $(DOT_VIM)/vimrc
 
 message = "\n$1$1 $2 $1$1"
 echo_install_title = @echo $(call message,⚡️,$1)
@@ -42,14 +43,15 @@ help:
 all: $(install_brew) $(target)
 
 # brew
-.PHONY: brew-install brew-bundle-dump
+.PHONY: brew-install brew-bundle
 brew-install:
 	$(call echo_install_title,$@)
-	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	if !(type "brew" > /dev/null 2>&1); then\
+		/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)";\
+	fi
 	brew update
-brew-bundle-dump:
-	$(call echo_other_title,$@)
-	brew bundle dump
+brew-bundle: brew-install
+	brew bundle
 
 # iTems2 theme
 .PHONY: iterm-theme-install
@@ -164,15 +166,10 @@ vim: vim-install-plug vim-conf
 vim-install-plug:
 	$(call echo_install_title,$@)
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	echo '*****'
-	echo '*****'
-	echo '*****'
-	echo 'type `:PlugInstall` in vim console after vim-install-plug'
+	$(call echo_message,type ":PlugInstall" in vim console after vim-install-plug)
 vim-conf:
 	$(call echo_conf_title,$@)
 	echo "source $(DOT_VIM_CONF)" >>$(VIM_CONF)
-
-
 
 # asciinema
 .PHONY: asciicast2gif-install
