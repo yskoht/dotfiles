@@ -28,6 +28,7 @@ brew "zplug"
 brew "tree"
 brew "zsh"
 brew "zsh-completions"
+brew "yarn"
 
 cask "docker"
 cask "virtualbox"
