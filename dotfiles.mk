@@ -58,7 +58,7 @@ mac-name:
 .PHONY: karabiner-conf
 karabiner-conf:
 	$(call echo_conf_title,$@)
-	ln -s $(DOT)/karabiner.json ~/.config/karabiner/karabiner.json
+	ln -s $(DOT_KARABINER)/karabiner.json ~/.config/karabiner/karabiner.json
 
 # iTems2 theme
 .PHONY: iterm-theme-install
