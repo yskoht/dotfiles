@@ -29,6 +29,7 @@ brew "tree"
 brew "zsh"
 brew "zsh-completions"
 brew "yarn"
+brew "gcc"
 
 cask "docker"
 cask "virtualbox"
