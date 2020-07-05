@@ -30,6 +30,7 @@ brew "zsh"
 brew "zsh-completions"
 brew "yarn"
 brew "gcc"
+brew "cocoapods"
 
 cask "docker"
 cask "virtualbox"
