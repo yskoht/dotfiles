@@ -1,19 +1,16 @@
 #!/usr/bin/make -f
 DOT := $(HOME)/.dotfiles
 
-BASH_CONF := $(HOME)/.bash_profile
 ZSH_CONF  := $(HOME)/.zshrc
 GIT_CONF  := $(HOME)/.gitconfig
 TMUX_CONF := $(HOME)/.tmux.conf
 VIM_CONF  := $(HOME)/.vimrc
 
-DOT_BASH      := $(DOT)/bash
 DOT_ZSH       := $(DOT)/zsh
 DOT_VIM       := $(DOT)/vim
 DOT_MAC       := $(DOT)/mac
 DOT_KARABINER := $(DOT)/karabiner
 
-DOT_BASH_CONF  := $(DOT_BASH)/bash_profile
 DOT_ZSH_CONF   := $(DOT_ZSH)/zshrc
 DOT_GIT_CONF   := $(DOT)/gitconfig
 DOT_TMUX_CONF  := $(DOT)/tmux.conf
@@ -73,19 +70,6 @@ powerline:
 	git clone https://github.com/powerline/fonts.git --depth=1
 	(cd fonts && ./install.sh)
 	rm -rf fonts
-
-# bash
-# .PHONY: bash bash-conf bash-addsh bash-chsh
-# bash: bash-conf
-# bash-conf:
-# 	$(call echo_conf_title,$@)
-# 	echo "source $(DOT_BASH_CONF)" >>$(BASH_CONF)
-# bash-addsh:
-# 	$(call echo_sudo_title,$@)
-# 	echo "$$(which bash" >> /etc/shells
-# bash-chsh:
-# 	$(call echo_sudo_title,$@)
-# 	chsh -s "$$(which bash)"
 
 # zsh
 .PHONY: zsh-conf zsh-git-prompt
@@ -160,5 +144,3 @@ qmkenv-install:
 	brew install dfu-programmer
 	brew install gcc-arm-none-eabi
 	brew install avrdude
-
-
