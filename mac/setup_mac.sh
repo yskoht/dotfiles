@@ -14,7 +14,7 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # スクロールバーを常時表示する
-defaults write NSGlobalDomain AppleShowScrollBars -string "Always" 
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 # 保存ダイアログを詳細設定で表示
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -150,3 +150,13 @@ defaults write com.apple.systemsound com.apple.sound.uiaudio.enabled -int 0
 defaults write NSGlobalDomain com.apple.sound.beep.feedback -bool true
 
 
+#
+# その他
+#
+
+# 「システム環境設定」 → 「トラックパッド」 → 「その他のジェスチャ」 → 「ページ間をスワイプ」 ： 「３本指でスワイプ」
+# 「システム環境設定」 → 「キーボード」 → 「入力ソース」 : ひらがな（Google）, 英数（Google）
+# 「システム環境設定」 → 「キーボード」 → 「ショートカット」 → 「キーボード」 → 次のウィンドウを操作対象にする ： option + tab
+# 「システム環境設定」 → 「サウンド」 : 「メニューバーに音量を表示」
+# 「システム環境設定」 → 「Bluetooth」 : 「メニューバーに音量を表示」
+# 「Finder」 -> 「環境設定」 -> 「サイドバー」 : home
