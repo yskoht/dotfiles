@@ -62,6 +62,9 @@ karabiner-conf:
 iterm-theme-install:
 	$(call echo_install_title,$@)
 	git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git
+	$(call echo_message,"Profiles -> Colors -> Import -> schema : Hivacruz")
+	$(call echo_message,"Profiles -> Terminals -> Notifications : Silence bell")
+	$(call echo_message,"General -> Selection : Applications in terminal may access clipboard")
 
 # powerline
 .PHONY: powerline
@@ -70,6 +73,7 @@ powerline:
 	git clone https://github.com/powerline/fonts.git --depth=1
 	(cd fonts && ./install.sh)
 	rm -rf fonts
+	$(call echo_message,"Profiles -> Text -> Font : Noto Mono for Powerline")
 
 # zsh
 .PHONY: zsh-conf zsh-git-prompt
@@ -115,6 +119,7 @@ tmux-conf:
 tmux-plugin-manager:
 	$(call echo_install_title,$@)
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	$(call echo_message,"Press prefix + 'I'")
 
 # vim
 .PHONY: vim-install-plug vim-conf
