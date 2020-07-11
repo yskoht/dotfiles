@@ -53,6 +53,7 @@ cask "appcleaner"
 cask "alfred"
 cask "imageoptim"
 cask "shiftit"
+cask "aws-vault"
 
 mas "Xcode", id:497799835
 
