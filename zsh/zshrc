@@ -48,3 +48,6 @@ source_ ${DOT_ZSH}/postgresql.sh
 # zsh-completions
 source_ ${DOT_ZSH}/zsh-completions.sh
 
+# android
+source_ ${DOT_ZSH}/android.sh
+
