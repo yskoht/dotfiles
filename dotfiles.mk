@@ -101,6 +101,7 @@ anyenv-install-env:
 	anyenv install rbenv
 	anyenv install pyenv
 	anyenv install nodenv
+	anyenv install jenv
 	exec $$SHELL -l
 anyenv-install:
 	$(call echo_install_title,$@)
@@ -110,6 +111,7 @@ anyenv-install:
 	pyenv global 3.8.3
 	nodenv install 14.4.0
 	nodenv global 14.4.0
+	jenv add $$(/usr/libexec/java_home)
 
 # tmux
 .PHONY: tmux-conf tmux-plugin-manager

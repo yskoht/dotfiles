@@ -54,6 +54,7 @@ cask "alfred"
 cask "imageoptim"
 cask "shiftit"
 cask "aws-vault"
+cask "java"
 
 mas "Xcode", id:497799835
 
