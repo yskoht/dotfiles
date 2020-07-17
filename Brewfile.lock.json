@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "75acd5416cf9ec5b79a6881b5e071c147a29f702"
+        "revision": "4bd1bc6b1660cd9636064edb80206d2b3f19bcde"
       }
     },
     "brew": {
@@ -777,6 +777,24 @@
         "version": "14.0.1,7:664493ef4a6946b186ff29eb326336a2",
         "options": {
           "full_name": "java",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "android-studio": {
+        "version": "4.0.1.0,193.6626763",
+        "options": {
+          "full_name": "android-studio",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "genymotion": {
+        "version": "3.1.0",
+        "options": {
+          "full_name": "genymotion",
           "args": {
             "appdir": "/Applications"
           }

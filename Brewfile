@@ -55,6 +55,8 @@ cask "imageoptim"
 cask "shiftit"
 cask "aws-vault"
 cask "java"
+cask "android-studio"
+cask "genymotion"
 
 mas "Xcode", id:497799835
 
