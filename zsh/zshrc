@@ -51,3 +51,6 @@ source_ ${DOT_ZSH}/zsh-completions.sh
 # android
 source_ ${DOT_ZSH}/android.sh
 
+# aws-vault
+source_ ${DOT_ZSH}/aws-vault.sh
+
