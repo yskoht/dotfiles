@@ -31,6 +31,7 @@ brew "zsh-completions"
 brew "yarn"
 brew "gcc"
 brew "cocoapods"
+brew "watchman"
 
 cask "docker"
 cask "virtualbox"
