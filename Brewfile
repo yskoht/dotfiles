@@ -56,6 +56,7 @@ cask "imageoptim"
 cask "shiftit"
 cask "aws-vault"
 cask "java"
+cask "adoptopenjdk"
 cask "android-studio"
 cask "genymotion"
 
