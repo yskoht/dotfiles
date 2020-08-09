@@ -54,3 +54,5 @@ source_ ${DOT_ZSH}/android.sh
 # aws-vault
 source_ ${DOT_ZSH}/aws-vault.sh
 
+# kubernetes
+source_ ${DOT_ZSH}/kubernetes.sh

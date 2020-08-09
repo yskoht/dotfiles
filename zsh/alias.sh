@@ -36,4 +36,5 @@ alias t='tmux'
 alias nr='npm run'
 alias ns='npm start'
 alias av='aws-vault'
+alias k='kubectl'
 
