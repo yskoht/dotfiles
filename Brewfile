@@ -32,6 +32,7 @@ brew "yarn"
 brew "gcc"
 brew "cocoapods"
 brew "watchman"
+brew "redis"
 
 cask "docker"
 cask "virtualbox"
