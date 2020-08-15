@@ -60,6 +60,7 @@ cask "java"
 cask "adoptopenjdk"
 cask "android-studio"
 cask "genymotion"
+cask "google-cloud-sdk"
 
 mas "Xcode", id:497799835
 
