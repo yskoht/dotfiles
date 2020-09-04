@@ -34,6 +34,9 @@ brew "cocoapods"
 brew "watchman"
 brew "redis"
 
+tap "facebook/fb"
+brew "idb-companion"
+
 cask "docker"
 cask "virtualbox"
 cask "firefox"

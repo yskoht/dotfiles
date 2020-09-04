@@ -158,3 +158,13 @@ react-native-debugger-0.10-install:
 	$(call echo_install_title,$@)
 	brew update && brew cask install https://raw.githubusercontent.com/Homebrew/homebrew-cask/b6ac3795c1df9f97242481c0817b1165e3e6306a/Casks/react-native-debugger.rb
 
+.PHONY: idb
+idb: idb-install
+idb-install:
+	$(call echo_install_title,$@)
+	pip install fb-idb
+idb-link:
+	$(call echo_install_title,$@)
+	ln -s /usr/local/Cellar/idb-companion/1.0.14.reinstall/bin/idb_companion /usr/local/bin/
+
+
