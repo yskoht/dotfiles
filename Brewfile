@@ -61,6 +61,7 @@ cask "adoptopenjdk"
 cask "android-studio"
 cask "genymotion"
 cask "google-cloud-sdk"
+cask "flipper"
 
 mas "Xcode", id:497799835
 
