@@ -33,6 +33,7 @@ brew "gcc"
 brew "cocoapods"
 brew "watchman"
 brew "redis"
+brew "neovim", args: ['HEAD']
 
 tap "facebook/fb"
 brew "idb-companion"
