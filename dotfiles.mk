@@ -102,6 +102,7 @@ anyenv-install-env:
 	anyenv install pyenv
 	anyenv install nodenv
 	anyenv install jenv
+	anyenv install goenv
 	exec $$SHELL -l
 anyenv-install:
 	$(call echo_install_title,$@)
