@@ -34,6 +34,7 @@ brew "cocoapods"
 brew "watchman"
 brew "redis"
 brew "neovim", args: ['HEAD']
+brew "kubectx"
 
 tap "facebook/fb"
 brew "idb-companion"
