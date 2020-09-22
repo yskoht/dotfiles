@@ -68,6 +68,7 @@ cask "genymotion"
 cask "google-cloud-sdk"
 cask "flipper"
 cask "react-native-debugger"
+cask "ngrok"
 
 mas "Xcode", id:497799835
 
