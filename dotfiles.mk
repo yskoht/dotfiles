@@ -151,3 +151,10 @@ qmkenv-install:
 	brew install dfu-programmer
 	brew install gcc-arm-none-eabi
 	brew install avrdude
+
+.PHONY: react-native-debugger-0.10
+react-native-debugger-0.10: react-native-debugger-0.10-install
+react-native-debugger-0.10-install:
+	$(call echo_install_title,$@)
+	brew update && brew cask install https://raw.githubusercontent.com/Homebrew/homebrew-cask/b6ac3795c1df9f97242481c0817b1165e3e6306a/Casks/react-native-debugger.rb
+
