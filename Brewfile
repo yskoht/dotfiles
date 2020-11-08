@@ -35,9 +35,14 @@ brew "watchman"
 brew "redis"
 brew "neovim", args: ['HEAD']
 brew "kubectx"
+brew "graphviz"
+brew "plantuml"
 
 tap "facebook/fb"
 brew "idb-companion"
+
+tap "mongodb/brew"
+brew "mongodb-community@4.4"
 
 cask "docker"
 cask "virtualbox"
