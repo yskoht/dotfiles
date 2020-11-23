@@ -44,6 +44,9 @@ brew "idb-companion"
 tap "mongodb/brew"
 brew "mongodb-community@4.4"
 
+cask "inkscape"
+cask "kicad"
+
 cask "docker"
 cask "virtualbox"
 cask "firefox"
@@ -57,8 +60,6 @@ cask "arduino"
 cask "discord"
 cask "slack"
 cask "dropbox"
-cask "inkscape"
-cask "kicad"
 cask "skype"
 cask "vlc"
 cask "appcleaner"
@@ -74,6 +75,7 @@ cask "google-cloud-sdk"
 cask "flipper"
 cask "react-native-debugger"
 cask "ngrok"
+cask "dynalist"
 
 mas "Xcode", id:497799835
 
