@@ -78,4 +78,5 @@ cask "ngrok"
 cask "dynalist"
 
 mas "Xcode", id:497799835
+mas "HexFiend", id:1342896380
 
