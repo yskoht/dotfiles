@@ -7,7 +7,6 @@ brew "git"
 brew "tmux"
 brew "vim"
 brew "imagemagick"
-brew "ffmpeg"
 brew "asciinema"
 brew "jq"
 brew "postgresql"
@@ -43,6 +42,9 @@ brew "idb-companion"
 
 tap "mongodb/brew"
 brew "mongodb-community@4.4"
+
+tap "homebrew-ffmpeg/ffmpeg"
+brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ['HEAD', 'with-fdk-aac']
 
 cask "inkscape"
 cask "kicad"
