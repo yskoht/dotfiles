@@ -78,6 +78,7 @@ cask "flipper"
 cask "react-native-debugger"
 cask "ngrok"
 cask "dynalist"
+cask "clip-studio-paint"
 
 mas "Xcode", id:497799835
 mas "HexFiend", id:1342896380
