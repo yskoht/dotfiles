@@ -79,6 +79,7 @@ cask "react-native-debugger"
 cask "ngrok"
 cask "dynalist"
 cask "clip-studio-paint"
+cask "pycharm-ce"
 
 mas "Xcode", id:497799835
 mas "HexFiend", id:1342896380
