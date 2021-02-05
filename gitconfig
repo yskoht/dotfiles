@@ -72,4 +72,6 @@
         # log -p
         # log -S
         # grep
+        # code
+        code = "!f() { git status --short | uniq | fzf --preview \"git diff --color=always {}\" | cut -c 4- | xargs code; }; f"
 
