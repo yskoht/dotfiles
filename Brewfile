@@ -46,8 +46,8 @@ brew "mongodb-community@4.4"
 tap "homebrew-ffmpeg/ffmpeg"
 brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ['HEAD', 'with-fdk-aac']
 
-cask "inkscape"
-cask "kicad"
+# cask "inkscape"
+# cask "kicad"
 
 cask "docker"
 cask "virtualbox"
