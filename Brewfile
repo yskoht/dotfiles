@@ -80,7 +80,10 @@ cask "ngrok"
 cask "dynalist"
 cask "clip-studio-paint"
 cask "pycharm-ce"
+cask "blackhole-2ch"
+cask "blackhole-16ch"
 
 mas "Xcode", id:497799835
 mas "HexFiend", id:1342896380
+# max "LadioCast", id:411213048
 
