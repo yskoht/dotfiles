@@ -63,7 +63,8 @@
         # update branch
         u =  "!f() { current=$(git branch --show-current) && target=$(git b) && git co ${target} >/dev/null && git pull >/dev/null && git co ${current} >/dev/null && echo ${target}; }; f"
         # rebase -i
-        ri = "!f() { target=$(git b) && git rebase -i ${target} && stty sane; }; f"
+        #ri = "!f() { target=$(git l) && t=$(echo ${target} | cut -c -9) && git rebase -i ${t} && stty sane; }; f"
+        ri = "!f() { target=$(git l) && echo ${target} | cut -d ' ' -f 1 | xargs git rebase -i && stty sane; }; f"
         # update & rebase -i
         uri = "!f() { target=$(git u) && git rebase -i ${target} && stty sane; }; f"
         # log
