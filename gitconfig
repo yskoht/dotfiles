@@ -67,6 +67,8 @@
         ri = "!f() { target=$(git l) && echo ${target} | cut -d ' ' -f 1 | xargs git rebase -i && stty sane; }; f"
         # update & rebase -i
         uri = "!f() { target=$(git u) && git rebase -i ${target} && stty sane; }; f"
+        # revert
+        re = "!f() { target=$(git l) && echo ${target} | cut -d ' ' -f 1 | xargs git revert; }; f"
         # log
         l  = "!f() { git log --pretty=format:'%h - %s(%cr)' --abbrev-commit --date=relative | fzf --preview \"echo {} | cut -c -7 | xargs git show --color=always\"; }; f"
         ln = "!f() { git log --pretty=format:'%h - %s(%cr)' --abbrev-commit --date=relative | fzf --preview \"echo {} | cut -c -7 | xargs git show --name-only --color=always\"; }; f"
