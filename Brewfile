@@ -46,6 +46,9 @@ brew "mongodb-community@4.4"
 tap "homebrew-ffmpeg/ffmpeg"
 brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ['HEAD', 'with-fdk-aac']
 
+tap "heroku/brew"
+brew "heroku"
+
 # cask "inkscape"
 # cask "kicad"
 
