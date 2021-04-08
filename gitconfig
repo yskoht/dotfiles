@@ -33,21 +33,27 @@
         rst = reset --soft HEAD^
         hr = cm '---' --allow-empty
 
+        # for script
+        bsc = branch --show-current
+        dno = diff --name-only
+        sts = status --short
+
+
         # push
-        ps = "!f() { git push -u origin $(git branch --show-current); }; f"
+        ps = "!f() { current=$(git bsc) && if [ ! \"${current}\" = 'master' ]; then git push -u origin ${current}; else echo 'DO NOT PUSH FOR MASTER'; fi; }; f"
 
         # diff
-        d  = "!f() { git diff --name-only | uniq | fzf --preview \"git diff --color=always {}\" >/dev/null; }; f"
+        d  = "!f() { git dno | uniq | fzf --preview \"git diff --color=always {}\" >/dev/null; }; f"
         # diff --cached 
-        dc = "!f() { git diff --name-only --cached  | uniq | fzf --preview \"git diff --cached --color=always {}\" >/dev/null; }; f"
+        dc = "!f() { git dno --cached  | uniq | fzf --preview \"git diff --cached --color=always {}\" >/dev/null; }; f"
         # add 
-        a  = "!f() { git status --short | grep -E '^\\sM|^MM|^\\?|^UU|^AM|^\\sD' | fzf -m --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4- | xargs git add; git status; }; f"
+        a  = "!f() { git sts | grep -E '^\\sM|^MM|^\\?|^UU|^AM|^\\sD' | fzf -m --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4- | xargs git add; git status; }; f"
         # add --patch
-        ap = "!f() { target=$(git status --short | grep -E '^\\sM|^MM|^\\?|^UU|^AM|^\\sD' | fzf --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4-); git add -p ${target}; git status; }; f"
+        ap = "!f() { target=$(git sts | grep -E '^\\sM|^MM|^\\?|^UU|^AM|^\\sD' | fzf --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4-); git add -p ${target}; git status; }; f"
         # unstage
-        us = "!f() { git diff --name-only --cached | fzf -m --preview \"git diff --cached --color=always {}\" | xargs git reset HEAD; git status; }; f"
+        us = "!f() { git dno --cached | fzf -m --preview \"git diff --cached --color=always {}\" | xargs git reset HEAD; git status; }; f"
         # restore
-        cr  = "!f() { git status --short | grep -E '^\\sM|^MM|^\\sD' | fzf -m --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4- | xargs git restore; git status; }; f"
+        cr  = "!f() { git sts | grep -E '^\\sM|^MM|^\\sD' | fzf -m --preview \"echo {} | cut -c 4- | xargs git diff --color=always\" | cut -c 4- | xargs git restore; git status; }; f"
         # branch list
         b = "!f() { git branch | fzf --preview \"echo {} | cut -c 3- | xargs git log --color=always\" | cut -c 3- | xargs echo; }; f"
         # branch list (multi)
@@ -59,9 +65,9 @@
         # branch --all
         ba = "!f() { git fetch --prune; name=$(git branch -a | grep -E '^\\s*remotes' | fzf --preview \"echo {} | cut -c 3- | xargs git log --color=always\" | cut -c 18-); git checkout -b ${name} origin/${name}; }; f"
         # cherry-pick
-        cp = "!f() { current=$(git branch --show-current) && target=$(git b) && git checkout ${target} && hash=$(git log --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr)' --abbrev-commit --date=relative | fzf -m --preview \"echo {} | xargs git show\" | cut -c -7 | tail -r) && git checkout ${current} && git cherry-pick -m 1 ${hash}; stty sane; }; f"
+        cp = "!f() { current=$(git bsc) && target=$(git b) && git checkout ${target} && hash=$(git log --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr)' --abbrev-commit --date=relative | fzf -m --preview \"echo {} | xargs git show\" | cut -c -7 | tail -r) && git checkout ${current} && git cherry-pick -m 1 ${hash}; stty sane; }; f"
         # update branch
-        u =  "!f() { current=$(git branch --show-current) && target=$(git b) && git co ${target} >/dev/null && git pull >/dev/null && git co ${current} >/dev/null && echo ${target}; }; f"
+        u =  "!f() { current=$(git bsc) && target=$(git b) && git co ${target} >/dev/null && git pull >/dev/null && git co ${current} >/dev/null && echo ${target}; }; f"
         # rebase -i
         #ri = "!f() { target=$(git l) && t=$(echo ${target} | cut -c -9) && git rebase -i ${t} && stty sane; }; f"
         ri = "!f() { target=$(git l) && echo ${target} | cut -d ' ' -f 1 | xargs git rebase -i && stty sane; }; f"
@@ -76,5 +82,5 @@
         # log -S
         # grep
         # code
-        code = "!f() { git status --short | uniq | fzf --preview \"git diff --color=always {}\" | cut -c 4- | xargs code; }; f"
+        code = "!f() { git sts | uniq | fzf --preview \"git diff --color=always {}\" | cut -c 4- | xargs code; }; f"
 
