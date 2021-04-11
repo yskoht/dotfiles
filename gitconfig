@@ -18,7 +18,7 @@
         cpc = cherry-pick --continue
         f = fetch --prune
         fa = fetch --all --prune
-        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --tags
         ra = rebase --abort
         rc = rebase --continue
         rv = remote -v
