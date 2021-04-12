@@ -59,13 +59,15 @@
         # branch list (multi)
         bmul = "!f() { git branch | fzf -m --preview \"echo {} | cut -c 3- | xargs git log --color=always\" | cut -c 3- | xargs echo; }; f"
         # branch
-        br = "!f() { git b | xargs git checkout; }; f"
+        br = "!f() { git b | xargs git co; }; f"
         # branch -D
         bD = "!f() { git bmul | xargs git branch -D; }; f"
         # branch --all
-        ba = "!f() { git fetch --prune; name=$(git branch -a | grep -E '^\\s*remotes' | fzf --preview \"echo {} | cut -c 3- | xargs git log --color=always\" | cut -c 18-); git checkout -b ${name} origin/${name}; }; f"
+        ba = "!f() { git fetch --prune; name=$(git branch -a | grep -E '^\\s*remotes' | fzf --preview \"echo {} | cut -c 3- | xargs git log --color=always\" | cut -c 18-); git cb ${name} origin/${name}; }; f"
         # cherry-pick
-        cp = "!f() { current=$(git bsc) && target=$(git b) && git checkout ${target} && hash=$(git log --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr)' --abbrev-commit --date=relative | fzf -m --preview \"echo {} | xargs git show\" | cut -c -7 | tail -r) && git checkout ${current} && git cherry-pick -m 1 ${hash}; stty sane; }; f"
+        cp = "!f() { current=$(git bsc) && target=$(git b) && git co ${target} && hash=$(git log --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr)' --abbrev-commit --date=relative | fzf -m --preview \"echo {} | xargs git show\" | cut -c -7 | tail -r) && git co ${current} && git cherry-pick -m 1 ${hash}; stty sane; }; f"
+        # update & cherry-pick
+        ucp = "!f() { current=$(git bsc) && target=$(git u) && git co ${target} && hash=$(git log --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr)' --abbrev-commit --date=relative | fzf -m --preview \"echo {} | xargs git show\" | cut -c -7 | tail -r) && git co ${current} && git cherry-pick -m 1 ${hash}; stty sane; }; f"
         # update branch
         u =  "!f() { current=$(git bsc) && target=$(git b) && git co ${target} >/dev/null && git pull >/dev/null && git co ${current} >/dev/null && echo ${target}; }; f"
         # rebase -i
