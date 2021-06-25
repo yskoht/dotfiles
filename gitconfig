@@ -11,6 +11,9 @@
 [pull]
         ff = only
 
+[diff]
+  indentHeuristic = true
+
 [alias]
         ci = commit -v
         cm = commit -m
