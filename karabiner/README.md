@@ -4,6 +4,6 @@
 ## Setup
 
 ```sh
-ln -s karabiner.json ~/.config/karabiner/karabiner.json
+cp karabiner.json ~/.config/karabiner/karabiner.json
 ```
 
