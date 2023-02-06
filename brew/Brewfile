@@ -1,0 +1,49 @@
+tap "homebrew/cask"
+
+cask_args appdir: "/Applications"
+
+brew "mas"
+brew "asdf"
+
+brew "bat"
+brew "exa"
+brew "ffmpeg"
+brew "jq"
+brew "haskell-stack"
+brew "ripgrep"
+brew "tmux"
+brew "zsh"
+brew "zsh-completions"
+brew "zsh-autosuggestions"
+
+brew "gettext" # for building git
+brew "libyaml" # for building ruby
+
+# cask "inkscape"
+# cask "kicad"
+
+cask "alfred"
+cask "audacity"
+cask "audio-hijack"
+cask "discord"
+cask "docker"
+cask "dropbox"
+cask "firefox"
+cask "flipper"
+cask "google-chrome"
+cask "google-drive"
+cask "iterm2"
+cask "karabiner-elements"
+cask "ngrok"
+cask "notion"
+cask "slack"
+cask "raindropio"
+cask "rectangle"
+cask "visual-studio-code"
+cask "vlc"
+cask "warp"
+cask "blender"
+
+mas "Xcode", id:497799835
+mas "GoodNotes 5", id:1444383602
+mas "Logic Pro", id:634148309
