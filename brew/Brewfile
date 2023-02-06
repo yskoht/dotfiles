@@ -1,0 +1,45 @@
+cask_args appdir: "/Applications"
+
+brew "mas"
+brew "asdf"
+
+brew "act"
+brew "ffmpeg"
+brew "jq"
+brew "haskell-stack"
+brew "pipx"
+brew "tmux"
+brew "zsh"
+brew "zsh-completions"
+brew "zsh-autosuggestions"
+brew "postgresql"
+
+brew "gettext" # for building git
+brew "libyaml" # for building ruby
+
+# cask "inkscape"
+# cask "kicad"
+
+cask "alfred"
+cask "audacity"
+cask "audio-hijack"
+cask "discord"
+cask "docker-desktop"
+cask "dropbox"
+cask "google-chrome"
+cask "google-drive"
+cask "iterm2"
+cask "karabiner-elements"
+cask "ngrok"
+cask "notion"
+cask "slack"
+cask "rectangle"
+cask "visual-studio-code"
+cask "vlc"
+cask "warp"
+cask "blender"
+cask "claude-code"
+
+# mas "Xcode", id:497799835
+# mas "GoodNotes 5", id:1444383602
+# mas "Logic Pro", id:634148309
